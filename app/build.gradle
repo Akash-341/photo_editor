@@ -63,13 +63,16 @@ dependencies {
     implementation files('libs/ds-photo-editor-sdk-v10.aar')
 
     // SDK related dependencies
-
+//    implementation 'com.itextpdf:itext7-core:7.1.15'
+    implementation 'com.itextpdf:kernel:7.1.8'
+    implementation 'com.itextpdf:layout:7.1.8'
+    implementation 'com.itextpdf:io:7.1.8'
     implementation 'androidx.appcompat:appcompat:1.6.1'
 
     implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
