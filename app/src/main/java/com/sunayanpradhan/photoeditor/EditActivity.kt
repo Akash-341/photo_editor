@@ -35,15 +35,15 @@ class EditActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditBinding
     private var selectedImageUris: MutableList<Uri> = mutableListOf()
-    private lateinit var imageAdapter: ImageAdapter
+//    private lateinit var imageAdapter: ImageAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
         binding= DataBindingUtil.setContentView(this,R.layout.activity_edit)
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        imageAdapter = ImageAdapter(selectedImageUris)
-        binding.recyclerView.adapter = imageAdapter
+//        binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//        imageAdapter = ImageAdapter(selectedImageUris)
+//        binding.recyclerView.adapter = imageAdapter
         val imageUris = intent.getStringArrayListExtra("imageUris")
         if (imageUris != null) {
             // If multiple image URIs are present, pass them to DsPhotoEditorActivity
@@ -103,13 +103,13 @@ class EditActivity : AppCompatActivity() {
                 // Add the selected image URI to the list
                 outputUri?.let {
                     selectedImageUris.add(it)
-                    imageAdapter.notifyDataSetChanged() // Notify the adapter that the data set has changed
+//                    imageAdapter.notifyDataSetChanged() // Notify the adapter that the data set has changed
                 }
-                createPdfFromImageUris(selectedImageUris)
+//                createPdfFromImageUris(selectedImageUris)
             }
         }
     }
-    private fun createPdfFromImageUris(imageUris: List<Uri>) {
+    /*private fun createPdfFromImageUris(imageUris: List<Uri>) {
         val pdfDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         if (!pdfDirectory.exists()) {
             pdfDirectory.mkdirs()
@@ -151,7 +151,7 @@ class EditActivity : AppCompatActivity() {
             // Handle any errors
             showToast("Error creating PDF")
         }
-    }
+    }*/
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
